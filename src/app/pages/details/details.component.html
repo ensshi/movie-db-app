@@ -1,0 +1,28 @@
+<div class="details-container" *ngIf="selectedItem">
+  <div class="button-video">
+    <div class="back-button">
+      <button (click)="goBack()">Back</button>
+    </div>
+    <div class="details-image-container">
+      <div class="details-image" *ngIf="trailerAvailable()">
+        <iframe
+          width="854"
+          height="480"
+          [src]="getTrailerUrl()"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div class="details-image" *ngIf="!trailerAvailable()">
+        <img
+          [src]="service.getImageUrl(selectedItem.poster_path)"
+          alt="{{ selectedItem.title || selectedItem.name }}"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="details-content">
+    <h2>{{ selectedItem.title || selectedItem.name }}</h2>
+    <p>{{ selectedItem.overview }}</p>
+  </div>
+</div>

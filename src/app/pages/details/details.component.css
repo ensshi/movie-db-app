@@ -1,0 +1,56 @@
+.back-button {
+  display: flex;
+  flex-direction: row;   
+  margin: 20px 0; 
+}
+  
+.back-button button {
+  text-align: center;
+  border: solid 2px #dbc730;
+  border-radius: 14px;
+  padding: 6px;
+  width: 128px;
+  background-color: #333333;
+  color: #dbc730;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: large;
+  transition: transform 0.3s ease;
+}
+
+.back-button button:hover {
+  background-color: #dbc730;
+  color: #333333;
+  border: solid 2px #333333;
+  position: relative;
+  flex-direction: row;
+}
+
+.details-container {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.details-image-container {
+  overflow: hidden;
+  width: auto;
+}
+
+.details-content > h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
+  color: #dbc730;
+  font-size: xx-large;
+  font-weight: lighter;
+}
+
+.details-content > p {
+  color: #d1c98f;
+  padding: 0 50px 0 50px;
+}

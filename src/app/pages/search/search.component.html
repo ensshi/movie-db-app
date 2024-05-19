@@ -1,0 +1,63 @@
+<body>
+  <div class="container">
+    <div class="filter">
+      <input
+        type="radio"
+        name="category"
+        value="movies"
+        id="one"
+        [(ngModel)]="selectedOption"
+        (change)="onSelectionChange($event)"
+        [checked]="selectedOption === 'movies'"
+      />
+      <label for="one">Movies</label>
+
+      <input
+        type="radio"
+        name="category"
+        value="tvShows"
+        id="two"
+        [(ngModel)]="selectedOption"
+        (change)="onSelectionChange($event)"
+        [checked]="selectedOption === 'tvShows'"
+      />
+      <label for="two">TV Shows</label>
+
+      <div class="slider"></div>
+    </div>
+    <br />
+
+    <div class="search">
+      <input
+        type="search"
+        [(ngModel)]="searchQuery"
+        (input)="onSearchQueryChange($event)"
+        placeholder="Search..."
+      />
+    </div>
+  </div>
+  <br />
+
+  <div *ngIf="isLoading">
+    <p>Loading...</p>
+  </div>
+  <div *ngIf="!isLoading && filteredItems.length">
+    <div class="grid-container">
+      <div
+        *ngFor="let item of filteredItems"
+        class="grid-item"
+        (click)="goToDetails(item.id)"
+      >
+        <img
+          [src]="getImageUrl(item.poster_path)"
+          [alt]="item.title || item.name"
+        />
+        <h3>{{ item.title || item.name }}</h3>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!isLoading && !filteredItems.length">
+    <p>No results found.</p>
+  </div>
+</body>
