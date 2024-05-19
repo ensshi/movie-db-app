@@ -17,7 +17,7 @@ npm install -g @angular/cli
 1. Clone this repository to your local machine.
 
 ```bash
-git clone https://github.com/ensshi/themoviedbapp.git
+git clone https://github.com/ensshi/movie-db-app.git
 cd movie-db-app
 ```
 
